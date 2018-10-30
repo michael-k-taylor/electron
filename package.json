@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dev:electron-main": "cross-env NODE_ENV='development' electron -r babel-register ./app/renderer/"
   },
   "repository": "https://github.com/michael-unionroom/electron",
   "keywords": [

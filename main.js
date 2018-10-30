@@ -1,6 +1,15 @@
 const {app, BrowserWindow} = require('electron');
 let mainWindow;
 
+if (process.env.NODE_ENV === 'development') {
+  require('electron-watch')(
+    __dirname,
+    'dev:electron-main',
+    path.join(__dirname, './'),
+    2000
+  );
+}
+
 function createWindow () {
   mainWindow = new BrowserWindow({width: 800, height: 600})
   mainWindow.loadFile('index.html')
@@ -22,3 +31,5 @@ app.on('activate', function () {
     createWindow()
   }
 });
+
+console.log('test');
